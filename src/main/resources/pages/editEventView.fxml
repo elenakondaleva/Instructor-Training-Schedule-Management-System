@@ -1,0 +1,34 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.mint.training.controller.schedule.EventActionController">
+    <AnchorPane>
+        <VBox fx:id="extraFieldsBox" spacing="10" visible="false">
+            <HBox spacing="10">
+                <VBox spacing="10">
+                    <Label text="Event Type:" />
+                    <ComboBox fx:id="eventTypeComboBox"/>
+                </VBox>
+                <VBox spacing="10">
+                    <Label text="Description:" />
+                    <TextArea fx:id="descriptionTextArea" prefHeight="80" />
+                </VBox>
+                <VBox spacing="10">
+                <VBox spacing="10">
+                    <Label text="Start Date:" />
+                    <DatePicker fx:id="startDatePicker" />
+                </VBox>
+                <VBox spacing="10">
+                    <Label text="End Date:" />
+                    <DatePicker fx:id="endDatePicker" />
+                </VBox>
+                </VBox>
+            </HBox>
+
+            <HBox spacing="10">
+                <Button text="Save" onAction="#saveEvent"/>
+                <Button text="Cancel" onAction="#cancelEvent"/>
+            </HBox>
+        </VBox>
+    </AnchorPane>
+</VBox>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.mint.training.controller.layout.PrimaryController">
+    <AnchorPane>
+        <children>
+            <VBox layoutX="60.0" layoutY="20.0" spacing="10">
+                <HBox spacing="10">
+                    <VBox spacing="10">
+                        <Label text="Please choose Month:" />
+                        <ComboBox fx:id="monthComboBox"/>
+                    </VBox>
+                </HBox>
+                <fx:include source="instructorView.fxml" />
+                <fx:include source="eventTableView.fxml" />
+                <fx:include source="editEventView.fxml" />
+
+            </VBox>
+        </children>
+    </AnchorPane>
+</VBox>

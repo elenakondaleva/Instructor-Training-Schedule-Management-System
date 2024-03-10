@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.mint.training.controller.layout.MaintenanceScheduleController">
+
+    <VBox spacing="10" alignment="CENTER_LEFT">
+        <TableView fx:id="eventTableView" VBox.vgrow="ALWAYS">
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+            <columns>
+                <TableColumn text="Event Type" prefWidth="120" fx:id="eventType"/>
+                <TableColumn text="Description" prefWidth="400"  fx:id="descriptionColumn"/>
+                <TableColumn text="Start Date" prefWidth="100" fx:id="startDateColumn"/>
+                <TableColumn text="End Date" prefWidth="100" fx:id="endDateColumn"/>
+            </columns>
+        </TableView>
+
+        <HBox spacing="10">
+            <Button text="Add Event" fx:id="addButton" onAction="#addEvent"/>
+            <Button text="Edit Event" fx:id="editButton" onAction="#editEvent"/>
+            <Button text="Delete Event" fx:id="deleteButton" onAction="#deleteEvent"/>
+        </HBox>
+    </VBox>
+
+    <HBox alignment="BASELINE_RIGHT" AnchorPane.bottomAnchor="10" AnchorPane.rightAnchor="10">
+        <HBox spacing="10">
+            <Label text="Event Duration (days):" />
+            <Label fx:id="eventDuration" />
+        </HBox>
+    </HBox>
+</AnchorPane>
