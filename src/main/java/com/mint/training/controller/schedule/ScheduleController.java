@@ -34,22 +34,22 @@ public class ScheduleController {
 
     @GetMapping(SCHEDULE_BY_INSTRUCTOR)
     public List<ScheduleEventDto> getScheduleByInstructor(@PathVariable @Schema(example = "JANUARY") String month,
-                                                           @PathVariable @Positive @Schema(example = "1") long instractorId) {
+                                                           @PathVariable @Positive @Schema(example = "1") long instructorId) {
         List<Schedule> schedules = scheduleService
-                .eventsByInstructorPerMonth(MonthCalendar.valueOf(month), instractorId);
+                .eventsByInstructorPerMonth(MonthCalendar.valueOf(month), instructorId);
         return schedules.stream().map(item -> asScheduleEventDto(item)).collect(Collectors.toList());
     }
 
     @GetMapping(SUMMARY_SCHEDULE_BY_INSTRUCTOR)
     public int getSummuryScheduleByInstructor(@PathVariable @Schema(example = "JANUARY") String month,
-                                       @PathVariable @Positive @Schema(example = "1") long instractorId) {
-        return scheduleService.summaryEventsByInstructorPerMonth(MonthCalendar.valueOf(month), instractorId);
+                                       @PathVariable @Positive @Schema(example = "1") long instructorId) {
+        return scheduleService.summaryEventsByInstructorPerMonth(MonthCalendar.valueOf(month), instructorId);
     }
 
     @GetMapping(SCHEDULE_BY_INSTRUCTOR_EVENT)
-    public ScheduleDto getScheduleByInstructorByEvent(@PathVariable @Positive @Schema(example = "1") long instractorId,
+    public ScheduleDto getScheduleByInstructorByEvent(@PathVariable @Positive @Schema(example = "1") long instructorId,
                                 @PathVariable @Positive @Schema(example = "1") long eventId) {
-        Schedule schedule = scheduleService.eventByInstructor(instractorId, eventId);
+        Schedule schedule = scheduleService.eventByInstructor(instructorId, eventId);
         return asSchedule(schedule);
     }
 
